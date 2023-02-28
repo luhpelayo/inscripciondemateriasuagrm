@@ -1,0 +1,360 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+  }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background: #016DF4;
+    height: 80px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo{
+    height: 40px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #75D7F0;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+
+@media (max-width: 896px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav {
+        position: relative;
+        z-index: 2;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: #75D7F0;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+
+    .dropdown { 				
+        display: block; 
+        margin-right: 0px;			
+        } 			
+    .dropbtn { 				
+        width: auto; 						
+        } 			
+    .dropdown-content { 				
+        position: static; 			
+        } 
+   /* ... */
+
+    /* ... */
+    .dropdown-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+      
+      .dropdown-container .dropdown {
+        flex-basis: calc(33.33% - 10px);
+        /* Restar el margen para que los elementos se ajusten adecuadamente */
+      }
+      
+    .table-container {
+        margin-top: 20px; /* mover la tabla debajo del dropdown */
+        width: 100%; /* reducir el ancho de la tabla para que quepa en la pantalla */
+    	
+    }
+  
+    
+    .notehorario {
+        
+        margin-left: 20px; /* Agrega un pequeño margen superior */
+      }      	
+      
+        
+  .tabla-fija {
+    overflow-x: auto;
+    position: sticky;
+    top: 80px; /* altura de la barra de navegación */
+    z-index: 1;
+  }
+    
+
+ 
+}
+/* fin de media */
+/*parte del dropdown y cards*/
+
+.dropdown {
+    position: relative; 			
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px; 		
+    } 		
+.dropbtn { 			
+    background-color: #FF774B; 			
+    color: white; 			
+    padding: 16px; 			
+    font-size: 16px; 			
+    border: none; 			
+    cursor: pointer; 			
+    width: 120%; 			
+    max-width: 340px;  /* Establece un ancho máximo para el dropdown */ 
+        
+} 		
+.dropdown-content { 			
+    display: block; 			
+    position: absolute; 			
+    z-index: 1; 			
+    min-width: 160px; 			
+    width: 100%; 		
+    } 		
+.dropdown-content .card { 			
+    display: block; 			
+    padding: 10px; 			
+    margin-bottom: 5px; 			
+    width: 120%; 			
+    max-width: 300px; /* Establece un ancho máximo para las cartas */ 
+        
+    } 		
+
+
+  /* ... */
+.card:hover {
+background-color: #ddd;
+border: 2px solid rgb(0, 0, 0); /* Agrega un borde de 2 píxeles de ancho y color rojo */
+}
+/* ... */
+
+
+.title {
+    text-align: center; /* Centra el texto */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    max-width: 400px; /* Limita el ancho del contenedor */
+    margin-top: 20px;
+  }
+  
+.note {
+    text-align: center; /* Centra el texto */
+    margin-top: 10px; /* Agrega un pequeño margen superior */
+  }
+ 
+ 
+
+  th {
+    background-color: black;
+    color: white;
+  }
+/*tabla de horarios*/
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    margin: auto;
+    margin-left: 70px;
+     
+    }
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    }
+
+@media screen and (max-width: 600px) {
+    th, td {
+    font-size: 12px;
+    padding: 4px;
+    }
+    }
+
+    .table-container {
+        clear: both;
+        width: 70%;
+        border-collapse: collapse;
+        margin-top: 40px;
+        margin-left: 20px; /* reducir el margen izquierdo para que no quede demasiado espacio */
+        overflow-x: auto; /* Agrega desplazamiento horizontal en dispositivos móviles */
+  
+       
+           
+            width: 100%; /* establece el ancho del contenedor al 100% */
+            overflow-x: auto; /* Agrega scroll horizontal */
+       
+          
+     
+          
+          
+    }
+
+    .tabla-fija {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        z-index: 1;
+        margin-top: 70px;
+      }
+      .notehorario {
+        text-align: center; /* Centra el texto */
+        margin-top: 10px; /* Agrega un pequeño margen superior */
+        position: fixed;
+        transform: translateX(-50%);
+        z-index: 1;
+        margin-left: 500px;
+      } 
+
+  
+     /*para eliminar eventos del mouse */
+        th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        }
+        @media screen and (max-width: 600px) {
+        th, td {
+        font-size: 12px;
+        padding: 4px;
+        }
+        }
+        table td:hover {
+          border: 2px solid red;
+        }
+
+
+
+
+
+        /*botones floteantes*/
+        .botones-flotantes {
+            position: fixed;
+            bottom: 20px; /* ajusta la posición vertical aquí según tu preferencia */
+            right: 20px; /* ajusta la posición horizontal aquí según tu preferencia */
+          
+        }
+        .botones-flotantes button {
+            padding: 10px;
+            margin: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          
+          .botones-flotantes #eliminar-grupo {
+            background-color: #ff0000; /* Cambiar el color de fondo del botón Eliminar a rojo */
+          }
+          .botones-flotantes #eliminar-grupo:hover{
+            background-color: #000000; /* Cambiar el color de fondo del botón Eliminar a rojo */
+          }
+          .botones-flotantes button:not(#eliminar-grupo) {
+            background-color: #0080ff; /* Cambiar el color de fondo de los demás botones a azul en hover */
+          }
+          .botones-flotantes button:not(#eliminar-grupo):hover {
+            background-color: #000000; /* Cambiar el color de fondo de los demás botones a azul en hover */
+          }
+
+          .texto-flotante {
+            position: absolute;
+            bottom: 30px; /* ajusta la posición vertical aquí según tu preferencia */
+            right: 40px; /* ajusta la posición horizontal aquí según tu preferencia */
+            z-index: 1;
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            white-space: nowrap;
+            margin-bottom: 20px;
+            font-size: 15px;  /* tamaño */
+            font-weight: bold; /* negrita */
+          }
+          @media only screen and (max-width: 768px) {
+            /* Estilos para pantallas más pequeñas */
+            .botones-flotantes {
+              bottom: 10px;
+              right: 10px;
+            }
+            
+            .botones-flotantes button {
+              padding: 6px 10px;
+              margin-right: 3px;
+              font-size: 10px;
+            }
+            
+            .texto-flotante {
+              bottom: 20px;
+              right: 30px;
+              font-size: 10px;
+            }
+          }
+          
