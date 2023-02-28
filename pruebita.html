@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Etiqueta flotante con JavaScript</title>
+    <style>
+    /* Estilos para la etiqueta flotante */
+#etiqueta-flotante {
+    position: fixed;
+    top: 50%; /* Centramos verticalmente */
+    left: 50%; /* Centramos horizontalmente */
+    transform: translate(-50%, 50%); /* Centramos y bajamos un poco más */
+    padding: 10px;
+    background-color: rgba(255, 0, 0, 0.5); /* Fondo rojo con 50% de opacidad */
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    color: rgb(255, 252, 252);
+    display: none;
+
+    /* Ajustamos el tamaño de la etiqueta flotante en diferentes dispositivos */
+    width: 50%;
+    max-width: 400px;
+}
+
+/* Ajustamos el tamaño y la posición de la etiqueta flotante en dispositivos pequeños */
+@media (max-width: 768px) {
+    #etiqueta-flotante {
+        top: 60%; /* Bajamos un poco más */
+        left: 50%; /* Centramos horizontalmente */
+        transform: translate(-50%, 0); /* Centramos y no bajamos más */
+        padding: 5px;
+        font-size: 0.8em;
+        width: 80%;
+        max-width: none;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+	<h1>Etiqueta flotante con JavaScript</h1>
+
+	<div id="etiqueta-flotante"></div> <!-- Creamos la etiqueta vacía -->
+
+	<script>
+		// Obtenemos la etiqueta flotante con JavaScript
+		var etiqueta = document.getElementById('etiqueta-flotante');
+
+		// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+		etiqueta.innerHTML = "Hola Mundo";
+
+		// Mostramos la etiqueta flotante
+		etiqueta.style.display = "block";
+
+		// Agregamos un controlador de eventos para el evento "click" en el objeto "document"
+		document.addEventListener('click', function(evento) {
+			// Comprobamos si el clic ocurrió dentro de la etiqueta flotante
+			if (etiqueta.contains(evento.target)) {
+				return;
+			}
+
+			// Si el clic ocurrió fuera de la etiqueta flotante, la ocultamos
+			etiqueta.style.display = "none";
+		});
+	</script>
+
+</body>
+</html>

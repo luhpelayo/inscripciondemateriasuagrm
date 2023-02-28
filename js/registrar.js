@@ -1,26 +1,27 @@
 function mostrarCartas() {
-    // Ocultar todas las cartas
-    const cartas = document.querySelectorAll('.card');
-    cartas.forEach(carta => carta.style.display = 'none');
+  // Ocultar todas las cartas
+  const cartas = document.querySelectorAll('.card');
+  cartas.forEach(carta => carta.style.display = 'none');
 
-    // Obtener el valor actual del select
-    const semestre = document.querySelector('#semestres').value;
+  // Obtener el valor actual del select
+  const semestre = document.querySelector('#semestres').value;
 
-    // Mostrar solo las cartas correspondientes al semestre seleccionado
-    if (semestre === '') {
-      return; // No se ha seleccionado un semestre, no se muestra ninguna carta
-    } else if (semestre === 'todos') {
-      cartas.forEach(carta => carta.style.display = 'block'); // Mostrar todas las cartas
-    } else {
-      const cartasSemestre = document.querySelectorAll('.' + semestre);
-      cartasSemestre.forEach(carta => carta.style.display = 'block'); // Mostrar las cartas del semestre seleccionado
-    }
+  // Mostrar solo las cartas correspondientes al semestre seleccionado
+  if (semestre === '') {
+    return; // No se ha seleccionado un semestre, no se muestra ninguna carta
+  } else if (semestre === 'todos') {
+    cartas.forEach(carta => carta.style.display = 'block'); // Mostrar todas las cartas
+  } else {
+    const cartasSemestre = document.querySelectorAll('.' + semestre);
+    cartasSemestre.forEach(carta => carta.style.display = 'block'); // Mostrar las cartas del semestre seleccionado
   }
+}
 
 
-  // parte de la tabla agregar eliminar y verificar se no chocan
+// parte de la tabla agregar eliminar y verificar se no chocan
 
-
+// Obtener la etiqueta flotante
+// Obtener la etiqueta flotante
 
 
 
@@ -33,8 +34,15 @@ var lunes1 = document.getElementById('lunes-1');
 var miercoles1 = document.getElementById('miercoles-1');
 var viernes1 = document.getElementById('viernes-1');
 // Verificar si las celdas están vacías antes de rellenarlas
-if (document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
-alert('No se puede inscribir materia que ya inscribiste en otro grupo');
+if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = "La materia ya esta inscrita";
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
 } else if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
 lunes1.textContent = 'INF221 - SA';
@@ -49,7 +57,14 @@ const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -59,8 +74,15 @@ var lunes1 = document.getElementById('lunes-2');
 var miercoles1 = document.getElementById('miercoles-2');
 var viernes1 = document.getElementById('viernes-2');
 // Verificar si las celdas están vacías antes de rellenarlas
-if (document.getElementById('lunes-1').textContent==='INF221 - SA'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
-alert('No se puede inscribir materia que ya inscribiste en otro grupo');
+if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = "La materia ya esta inscrita";
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
 } else 
 if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
@@ -76,7 +98,13 @@ const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -86,8 +114,15 @@ document.getElementById('rellenar-martes-jueves-emsamblador').addEventListener('
 var martes1 = document.getElementById('martes-1');
 var jueves1 = document.getElementById('jueves-1');
 // Verificar si las celdas están vacías antes de rellenarlas
-if (document.getElementById('lunes-1').textContent==='INF221 - SA'|| document.getElementById('lunes-2').textContent==='INF221 - SC' ){
-alert('No se puede inscribir materia que ya inscribiste en otro grupo');
+if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = "La materia ya esta inscrita";
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
 } else 
 if (martes1.textContent === '' && jueves1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
@@ -97,11 +132,18 @@ jueves1.textContent = 'INF221 - SB';
 jueves1.style.backgroundColor = '#FFDAB9';
 incrementar()
 } else {
-const valorCelda = lunes1.textContent;
+const valorCelda = martes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+// alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -120,11 +162,18 @@ jueves1.textContent = 'INF221 - SA';
 jueves1.style.backgroundColor = '#9ee9f7';
 incrementar()
 } else {
-const valorCelda = lunes1.textContent;
+const valorCelda = martes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -143,11 +192,18 @@ jueves1.textContent = 'ELC105 - SA';
 jueves1.style.backgroundColor = '#f9f4bd';
 incrementar()
 } else {
-const valorCelda = lunes1.textContent;
+const valorCelda = martes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -166,11 +222,18 @@ jueves1.textContent = 'INF512 - SB';
 jueves1.style.backgroundColor = '#98FB98';
 incrementar()
 } else {
-const valorCelda = lunes1.textContent;
+const valorCelda = martes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -189,11 +252,18 @@ jueves1.textContent = 'INF511 - SA';
 jueves1.style.backgroundColor = '#dcaff1';
 incrementar()
 } else {
-const valorCelda = lunes1.textContent;
+const valorCelda = martes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -219,7 +289,14 @@ const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -245,7 +322,13 @@ const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
-alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
 
@@ -365,6 +448,13 @@ miercoles1.textContent = '';
 miercoles1.style.backgroundColor = 'white';
 viernes1.textContent = '';
 viernes1.style.backgroundColor = 'white';
+}  else if (grupo === 'INF513 - SA') {
+lunes4.textContent = '';
+lunes4.style.backgroundColor = 'white';
+miercoles4.textContent = '';
+miercoles4.style.backgroundColor = 'white';
+viernes4.textContent = '';
+viernes4.style.backgroundColor = 'white';
 } else {
 console.log('Grupo de materia inválido');
 }
@@ -376,10 +466,10 @@ function incrementar() {
 var h3 = document.querySelector("#miH3");
 var valor = parseInt(h3.innerText);
 if (valor < 8) {
-  valor += 1;
-  h3.innerText = valor.toString() + "/8";
+valor += 1;
+h3.innerText = valor.toString() + "/8";
 } else {
-  alert("No se puede adicionar más de 8 materias dale en confirmar materias.");
+alert("No se puede adicionar más de 8 materias dale en confirmar materias.");
 }
 }
 
@@ -387,10 +477,10 @@ function decrementar() {
 var h3 = document.querySelector("#miH3");
 var valor = parseInt(h3.innerText);
 if (valor > 0) {
-  valor -= 1;
-  h3.innerText = valor.toString() + "/8";
+valor -= 1;
+h3.innerText = valor.toString() + "/8";
 } else {
-  alert("No se puede decrementar más.");
+alert("No se puede decrementar más.");
 }
 }
 
@@ -416,4 +506,21 @@ cupo--;
 // Actualizar el contenido del elemento del párrafo del cupo
 cupoElement.textContent = `Cupo: ${cupo}`;
 });
+});
+
+
+// Obtener referencia a la etiqueta flotante
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Escuchar el evento click en cualquier parte del documento
+document.addEventListener('click', function(event) {
+// Verificar si el clic fue dentro de la etiqueta flotante
+var clicDentroEtiqueta = etiqueta.contains(event.target);
+
+// Si el clic fue fuera de la etiqueta flotante, ocultarla
+if (!clicDentroEtiqueta) {
+
+}else {
+etiqueta.style.display = 'none';
+}
 });

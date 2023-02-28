@@ -250,10 +250,7 @@ th, td {
            
             width: 100%; /* establece el ancho del contenedor al 100% */
             overflow-x: auto; /* Agrega scroll horizontal */
-       
-          
-     
-          
+             
           
     }
 
@@ -265,6 +262,9 @@ th, td {
         z-index: 1;
         margin-top: 70px;
       }
+
+      
+
       .notehorario {
         text-align: center; /* Centra el texto */
         margin-top: 10px; /* Agrega un pequeño margen superior */
@@ -357,4 +357,50 @@ th, td {
               font-size: 10px;
             }
           }
+
+        
+       /* se hace scroll pero la tabla no se hace flotante
+          @media (max-width: 768px) {
+                     .table-container {
+                       overflow-x: auto;
+                     }
+                     
+                     .tabla-fija {
+                       position: static;
+                       width: auto;
+                       margin-top: 200px;
+                     }
+                   }
           
+          */
+/* Estilos para la etiqueta flotante mostrando alert de javascript */
+#etiqueta-flotante {
+  position: fixed;
+  top: 50%; /* Centramos verticalmente */
+  left: 50%; /* Centramos horizontalmente */
+  transform: translate(-50%, 50%); /* Centramos y bajamos un poco más */
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.5); /* Fondo rojo con 50% de opacidad */
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  color: rgb(255, 252, 252);
+  display: none;
+
+  /* Ajustamos el tamaño de la etiqueta flotante en diferentes dispositivos */
+  width: 50%;
+  max-width: 400px;
+  z-index: 9999;
+}
+
+/* Ajustamos el tamaño y la posición de la etiqueta flotante en dispositivos pequeños */
+@media (max-width: 768px) {
+  #etiqueta-flotante {
+      top: 60%; /* Bajamos un poco más */
+      left: 50%; /* Centramos horizontalmente */
+      transform: translate(-50%, 0); /* Centramos y no bajamos más */
+      padding: 5px;
+      font-size: 0.8em;
+      width: 80%;
+      max-width: none;
+  }
+}

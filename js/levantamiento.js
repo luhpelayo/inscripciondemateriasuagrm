@@ -1,24 +1,24 @@
 function mostrarCartas() {
-  // Ocultar todas las cartas
-  const cartas = document.querySelectorAll('.card');
-  cartas.forEach(carta => carta.style.display = 'none');
+    // Ocultar todas las cartas
+    const cartas = document.querySelectorAll('.card');
+    cartas.forEach(carta => carta.style.display = 'none');
 
-  // Obtener el valor actual del select
-  const semestre = document.querySelector('#semestres').value;
+    // Obtener el valor actual del select
+    const semestre = document.querySelector('#semestres').value;
 
-  // Mostrar solo las cartas correspondientes al semestre seleccionado
-  if (semestre === '') {
-    return; // No se ha seleccionado un semestre, no se muestra ninguna carta
-  } else if (semestre === 'todos') {
-    cartas.forEach(carta => carta.style.display = 'block'); // Mostrar todas las cartas
-  } else {
-    const cartasSemestre = document.querySelectorAll('.' + semestre);
-    cartasSemestre.forEach(carta => carta.style.display = 'block'); // Mostrar las cartas del semestre seleccionado
+    // Mostrar solo las cartas correspondientes al semestre seleccionado
+    if (semestre === '') {
+      return; // No se ha seleccionado un semestre, no se muestra ninguna carta
+    } else if (semestre === 'todos') {
+      cartas.forEach(carta => carta.style.display = 'block'); // Mostrar todas las cartas
+    } else {
+      const cartasSemestre = document.querySelectorAll('.' + semestre);
+      cartasSemestre.forEach(carta => carta.style.display = 'block'); // Mostrar las cartas del semestre seleccionado
+    }
   }
-}
 
 
-// parte de la tabla agregar eliminar y verificar se no chocan
+  // parte de la tabla agregar eliminar y verificar se no chocan
 
 
 
@@ -26,29 +26,29 @@ function mostrarCartas() {
 
 // Agregar elementos
 
-//agregar emsamblador 
-document.getElementById('rellenar-lunes-miercoles-viernes-emsamblador').addEventListener('click', function() {
+//agregar fisica
+
+document.getElementById('rellenar-martes-jueves1-fisica').addEventListener('click', function() {
 // Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
-var lunes1 = document.getElementById('lunes-1');
-var miercoles1 = document.getElementById('miercoles-1');
-var viernes1 = document.getElementById('viernes-1');
+
+var martes1 = document.getElementById('martes-2');
+var jueves1 = document.getElementById('jueves-2');
 var h3 = document.querySelector("#miH3");
 var valore = parseInt(h3.innerText);
 valore=valore+1;
 console.log(valore);
-
-if (valore>2){
+if (valore>1){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 
 //alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
 } else // Verificar si las celdas están vacías antes de rellenarlas
+if (document.getElementById('martes-3').textContent==='FIS200 - SB'|| document.getElementById('martes-2').textContent==='FIS200 - SA' ){
 
-if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
@@ -57,119 +57,12 @@ etiqueta.innerHTML = "La materia ya esta inscrita";
 etiqueta.style.display = "block";
 
 //alert('No se puede inscribir materia que ya inscribiste en otro grupo');
-} else if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
-// Rellenar las celdas con un texto y un color de fondo
-lunes1.textContent = 'INF221 - SA';
-lunes1.style.backgroundColor = '#FFDAB9';
-miercoles1.textContent = 'INF221 - SA';
-miercoles1.style.backgroundColor = '#FFDAB9';
-viernes1.textContent = 'INF221 - SA';
-viernes1.style.backgroundColor = '#FFDAB9';
-incrementar()
-} else {
-const valorCelda = lunes1.textContent;
-eli=valorCelda;
-console.log(eli); // a el
-// Si las celdas no están vacías, mostrar un mensaje de error
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-}
-});
-
-document.getElementById('rellenar-lunes-miercoles-viernes1-emsamblador').addEventListener('click', function() {
-// Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
-var lunes1 = document.getElementById('lunes-2');
-var miercoles1 = document.getElementById('miercoles-2');
-var viernes1 = document.getElementById('viernes-2');
-var h3 = document.querySelector("#miH3");
-var valore = parseInt(h3.innerText);
-valore=valore+1;
-console.log(valore);
-if (valore>2){
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-
-//alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
-} else // Verificar si las celdas están vacías antes de rellenarlas
-if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = "La materia ya esta inscrita";
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-
-//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
-} else 
-if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
-// Rellenar las celdas con un texto y un color de fondo
-lunes1.textContent = 'INF221 - SC';
-lunes1.style.backgroundColor = '#FFDAB9';
-miercoles1.textContent = 'INF221 - SC';
-miercoles1.style.backgroundColor = '#FFDAB9';
-viernes1.textContent = 'INF221 - SC';
-viernes1.style.backgroundColor = '#FFDAB9';
-incrementar()
-} else {
-const valorCelda = lunes1.textContent;
-eli=valorCelda;
-console.log(eli); // a el
-// Si las celdas no están vacías, mostrar un mensaje de error
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-}
-});
-
-document.getElementById('rellenar-martes-jueves-emsamblador').addEventListener('click', function() {
-// Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
-
-var martes1 = document.getElementById('martes-1');
-var jueves1 = document.getElementById('jueves-1');
-var h3 = document.querySelector("#miH3");
-var valore = parseInt(h3.innerText);
-valore=valore+1;
-console.log(valore);
-if (valore>2){
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-
-//alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
-} else // Verificar si las celdas están vacías antes de rellenarlas
-if (document.getElementById('lunes-1').textContent==='INF221 - SA'||document.getElementById('lunes-2').textContent==='INF221 - SC'|| document.getElementById('martes-1').textContent === 'INF221 - SB' ){
-var etiqueta = document.getElementById('etiqueta-flotante');
-
-// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = "La materia ya esta inscrita";
-// Mostramos la etiqueta flotante
-etiqueta.style.display = "block";
-
-//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
-} else 
+} else
 if (martes1.textContent === '' && jueves1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
-martes1.textContent = 'INF221 - SB';
+martes1.textContent = 'FIS200 - SA';
 martes1.style.backgroundColor = '#FFDAB9';
-jueves1.textContent = 'INF221 - SB';
+jueves1.textContent = 'FIS200 - SA';
 jueves1.style.backgroundColor = '#FFDAB9';
 incrementar()
 } else {
@@ -188,32 +81,43 @@ etiqueta.style.display = "block";
 }
 });
 
-//agregar compiladores
-document.getElementById('rellenar-martes-jueves5-compiladores').addEventListener('click', function() {
+// fisica2
+
+document.getElementById('rellenar-martes-jueves2-fisica').addEventListener('click', function() {
 // Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
 
-var martes1 = document.getElementById('martes-6');
-var jueves1 = document.getElementById('jueves-6');
+var martes1 = document.getElementById('martes-3');
+var jueves1 = document.getElementById('jueves-3');
 var h3 = document.querySelector("#miH3");
 var valore = parseInt(h3.innerText);
 valore=valore+1;
 console.log(valore);
-if (valore>2){
+if (valore>1){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 
 //alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
 } else // Verificar si las celdas están vacías antes de rellenarlas
+if (document.getElementById('martes-3').textContent==='FIS200 - SB'|| document.getElementById('martes-2').textContent==='FIS200 - SA' ){
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = "La materia ya esta inscrita";
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert('No se puede inscribir materia que ya inscribiste en otro grupo');
+} else
 if (martes1.textContent === '' && jueves1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
-martes1.textContent = 'INF221 - SA';
-martes1.style.backgroundColor = '#9ee9f7';
-jueves1.textContent = 'INF221 - SA';
-jueves1.style.backgroundColor = '#9ee9f7';
+martes1.textContent = 'FIS200 - SB';
+martes1.style.backgroundColor = '#FFDAB9';
+jueves1.textContent = 'FIS200 - SB';
+jueves1.style.backgroundColor = '#FFDAB9';
 incrementar()
 } else {
 const valorCelda = martes1.textContent;
@@ -231,8 +135,8 @@ etiqueta.style.display = "block";
 }
 });
 
-//agregar distribuidos
-document.getElementById('rellenar-martes-jueves5-distribuidos').addEventListener('click', function() {
+//agregar software 2
+document.getElementById('rellenar-martes-jueves5-software').addEventListener('click', function() {
 // Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
 
 var martes1 = document.getElementById('martes-6');
@@ -241,11 +145,11 @@ var h3 = document.querySelector("#miH3");
 var valore = parseInt(h3.innerText);
 valore=valore+1;
 console.log(valore);
-if (valore>2){
+if (valore>1){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 
@@ -253,13 +157,13 @@ etiqueta.style.display = "block";
 } else // Verificar si las celdas están vacías antes de rellenarlas
 if (martes1.textContent === '' && jueves1.textContent === '') {
 // Rellenar las celdas con un texto y un color de fondo
-martes1.textContent = 'ELC105 - SA';
-martes1.style.backgroundColor = '#f9f4bd';
-jueves1.textContent = 'ELC105 - SA';
-jueves1.style.backgroundColor = '#f9f4bd';
+martes1.textContent = 'INF512 - SB';
+martes1.style.backgroundColor = '#98FB98';
+jueves1.textContent = 'INF512 - SB';
+jueves1.style.backgroundColor = '#98FB98';
 incrementar()
 } else {
-const valorCelda = martes1.textContent;
+const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
@@ -270,11 +174,9 @@ etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 //alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-///alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
 }
 });
-
-
 
 //agregar taller
 document.getElementById('rellenar-martes-jueves6-taller').addEventListener('click', function() {
@@ -286,11 +188,11 @@ var h3 = document.querySelector("#miH3");
 var valore = parseInt(h3.innerText);
 valore=valore+1;
 console.log(valore);
-if (valore>2){
+if (valore>1){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 
@@ -304,7 +206,7 @@ jueves1.textContent = 'INF511 - SA';
 jueves1.style.backgroundColor = '#dcaff1';
 incrementar()
 } else {
-const valorCelda = martes1.textContent;
+const valorCelda = lunes1.textContent;
 eli=valorCelda;
 console.log(eli); // a el
 // Si las celdas no están vacías, mostrar un mensaje de error
@@ -319,6 +221,51 @@ etiqueta.style.display = "block";
 }
 });
 
+//agregar arquitectura
+document.getElementById('rellenar-lunes-miercoles-viernes-arquitectura').addEventListener('click', function() {
+// Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
+var lunes1 = document.getElementById('lunes-1');
+var miercoles1 = document.getElementById('miercoles-1');
+var viernes1 = document.getElementById('viernes-1');
+var h3 = document.querySelector("#miH3");
+var valore = parseInt(h3.innerText);
+valore=valore+1;
+console.log(valore);
+if (valore>1){
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+
+//alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
+} else // Verificar si las celdas están vacías antes de rellenarlas
+if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
+// Rellenar las celdas con un texto y un color de fondo
+lunes1.textContent = 'INF552 - SA';
+lunes1.style.backgroundColor = '#B0C4DE';
+miercoles1.textContent = 'INF552 - SA';
+miercoles1.style.backgroundColor = '#B0C4DE';
+viernes1.textContent = 'INF552 - SA';
+viernes1.style.backgroundColor = '#B0C4DE';
+incrementar()
+} else {
+
+const valorCelda = lunes1.textContent;
+eli=valorCelda;
+console.log(eli); // a el
+// Si las celdas no están vacías, mostrar un mensaje de error
+var etiqueta = document.getElementById('etiqueta-flotante');
+
+// Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
+etiqueta.innerHTML = 'No se puede inscribir esta materia el horario choca con:'+' '+eli;
+// Mostramos la etiqueta flotante
+etiqueta.style.display = "block";
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+//alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
+}
+});
 
 //agregar tecnoweb
 document.getElementById('rellenar-lunes-miercoles-viernes3-tecnoweb').addEventListener('click', function() {
@@ -330,11 +277,11 @@ var h3 = document.querySelector("#miH3");
 var valore = parseInt(h3.innerText);
 valore=valore+1;
 console.log(valore);
-if (valore>2){
+if (valore>1){
 var etiqueta = document.getElementById('etiqueta-flotante');
 
 // Agregamos el mensaje "Hola Mundo" a la etiqueta flotante
-etiqueta.innerHTML = 'No se puede adicionar más de 2 materias dale en confirmar materias.';
+etiqueta.innerHTML = 'No se puede levantar más de 1 materia dale en confirmar materias.';
 // Mostramos la etiqueta flotante
 etiqueta.style.display = "block";
 
@@ -368,7 +315,7 @@ etiqueta.style.display = "block";
 );
 
 
-//eliminar
+//eliminar materia
 
 
 const tabla = document.querySelector('table');
@@ -500,7 +447,17 @@ miercoles4.textContent = '';
 miercoles4.style.backgroundColor = 'white';
 viernes4.textContent = '';
 viernes4.style.backgroundColor = 'white';
-} else {
+} else if (grupo === 'FIS200 - SA') {
+martes2.textContent = '';
+martes2.style.backgroundColor = 'white';
+jueves2.textContent = '';
+jueves2.style.backgroundColor = 'white';
+} else if (grupo === 'FIS200 - SB') {
+martes3.textContent = '';
+martes3.style.backgroundColor = 'white';
+jueves3.textContent = '';
+jueves3.style.backgroundColor = 'white';
+}  else {
 console.log('Grupo de materia inválido');
 }
 console. log(grupo); 
@@ -510,11 +467,11 @@ console. log(grupo);
 function incrementar() {
 var h3 = document.querySelector("#miH3");
 var valor = parseInt(h3.innerText);
-if (valor < 2) {
-valor += 1;
-h3.innerText = valor.toString() + "/2";
+if (valor < 1) {
+  valor += 1;
+  h3.innerText = valor.toString() + "/1";
 } else {
-alert("No se puede adicionar más de 2 materias dale en confirmar materias.");
+  alert("No se puede adicionar más de 1 materia dale en confirmar materias.");
 }
 }
 
@@ -522,10 +479,10 @@ function decrementar() {
 var h3 = document.querySelector("#miH3");
 var valor = parseInt(h3.innerText);
 if (valor > 0) {
-valor -= 1;
-h3.innerText = valor.toString() + "/2";
+  valor -= 1;
+  h3.innerText = valor.toString() + "/1";
 } else {
-alert("No se puede decrementar más.");
+  alert("No se puede decrementar más.");
 }
 }
 
@@ -553,29 +510,31 @@ cupoElement.textContent = `Cupo: ${cupo}`;
 });
 });
 
-//pintando adicion
+//pintando MATERIAS INSCRITAS
+
+//SISTEMA EXPERTOS
 // Obtener el elemento con el id "lunes-1"
-var lunes1 = document.getElementById("lunes-1");
+var lunes2 = document.getElementById("lunes-2");
 // Establecer el contenido del elemento como "INF554"
-lunes1.innerHTML = "INF552 - SA";
+lunes2.innerHTML = "INF428 - SB";
 // Establecer el fondo del elemento como plomo (#808080)
-lunes1.style.backgroundColor = "#808080";
-var miercoles1 = document.getElementById("miercoles-1");
-miercoles1.innerHTML = "INF552 - SA";
-miercoles1.style.backgroundColor = "#808080";
-var viernes1 = document.getElementById("viernes-1");
-viernes1.innerHTML = "INF552 - SA";
-viernes1.style.backgroundColor = "#808080";
+lunes2.style.backgroundColor = "#808080";
+var miercoles2 = document.getElementById("miercoles-2");
+miercoles2.innerHTML = "INF428 - SB";
+miercoles2.style.backgroundColor = "#808080";
+var viernes2 = document.getElementById("viernes-2");
+viernes2.innerHTML = "INF428 - SB";
+viernes2.style.backgroundColor = "#808080";
 
-
-var martes6 = document.getElementById("martes-6");
+//FISICA II
+var martes1 = document.getElementById("martes-1");
 // Establecer el contenido del elemento como "INF554"
-martes6.innerHTML = "INF512 - SB";
+martes1.innerHTML = "FIS102 - NW";
 // Establecer el fondo del elemento como plomo (#808080)
-martes6.style.backgroundColor = "#808080";
-var jueves6 = document.getElementById("jueves-5");
-jueves6.innerHTML = "INF512 - SB";
-jueves6.style.backgroundColor = "#808080";
+martes1.style.backgroundColor = "#808080";
+var jueves1 = document.getElementById("jueves-1");
+jueves1.innerHTML = "FIS102 - NW";
+jueves1.style.backgroundColor = "#808080";
 
 
 
