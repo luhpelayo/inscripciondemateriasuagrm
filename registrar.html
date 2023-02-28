@@ -298,7 +298,7 @@ if (document.getElementById('lunes-1').textContent==='INF221 - SA'|| document.ge
     jueves1.style.backgroundColor = '#FFDAB9';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
    // Si las celdas no están vacías, mostrar un mensaje de error
@@ -321,7 +321,7 @@ document.getElementById('rellenar-martes-jueves5-compiladores').addEventListener
     jueves1.style.backgroundColor = '#9ee9f7';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
    // Si las celdas no están vacías, mostrar un mensaje de error
@@ -344,7 +344,7 @@ document.getElementById('rellenar-martes-jueves5-distribuidos').addEventListener
     jueves1.style.backgroundColor = '#f9f4bd';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
       // Si las celdas no están vacías, mostrar un mensaje de error
@@ -367,7 +367,7 @@ document.getElementById('rellenar-martes-jueves5-software').addEventListener('cl
     jueves1.style.backgroundColor = '#98FB98';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
   // Si las celdas no están vacías, mostrar un mensaje de error
@@ -390,7 +390,7 @@ document.getElementById('rellenar-martes-jueves5-software').addEventListener('cl
     jueves1.style.backgroundColor = '#dcaff1';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
   // Si las celdas no están vacías, mostrar un mensaje de error
@@ -566,6 +566,13 @@ if (grupo === 'INF221 - SA') {
   miercoles1.style.backgroundColor = 'white';
   viernes1.textContent = '';
   viernes1.style.backgroundColor = 'white';
+}  else if (grupo === 'INF513 - SA') {
+  lunes4.textContent = '';
+  lunes4.style.backgroundColor = 'white';
+  miercoles4.textContent = '';
+  miercoles4.style.backgroundColor = 'white';
+  viernes4.textContent = '';
+  viernes4.style.backgroundColor = 'white';
 } else {
   console.log('Grupo de materia inválido');
 }

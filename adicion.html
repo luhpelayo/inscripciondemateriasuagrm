@@ -22,7 +22,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="registrar.html">Inscripcion</a></li>
             <li><a class="active"   href="#">Adicion</a></li>
-            <li><a href="#">Levantamiento</a></li>
+            <li><a href="levantamiento.html">Levantamiento</a></li>
             <li><a href="#">Cerrar Sesion</a></li>
         </ul>
         </nav>
@@ -78,21 +78,7 @@
                     <p>Cupo: 6</p>  
                 </div>
 
-                <div class="card semestre9" id="rellenar-lunes-miercoles-viernes-arquitectura" style="background-color: #B0C4DE;">
-                    <h3>INF552 SA</h3>
-                    <h4>Arquitectura del Software</h4>
-                    <p>Ing. Veizaga G. Obed</p>
-                    <p>Lun-Mie-Vie 7:00 - 8:30</p>
-                    <p>Cupo: 11</p>  
-                </div>
-                
-                <div class="card semestre9" id="rellenar-martes-jueves5-software" style="background-color: #98FB98;">
-                    <h3>INF512 SB</h3>
-                    <h4>Ingenieria de Software II</h4>
-                    <p>Ing. Martinez Canedo Rolando</p>
-                    <p>Mar-Jue 18:15 - 20:30</p>
-                    <p>Cupo: 23</p>  
-                </div>
+           
 
 
                 <div class="card semestre9" id="rellenar-martes-jueves6-taller" style="background-color: #dcaff1;">
@@ -318,7 +304,7 @@ if (document.getElementById('lunes-1').textContent==='INF221 - SA'|| document.ge
     jueves1.style.backgroundColor = '#FFDAB9';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
    // Si las celdas no están vacías, mostrar un mensaje de error
@@ -347,7 +333,7 @@ document.getElementById('rellenar-martes-jueves5-compiladores').addEventListener
     jueves1.style.backgroundColor = '#9ee9f7';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
    // Si las celdas no están vacías, mostrar un mensaje de error
@@ -376,7 +362,7 @@ document.getElementById('rellenar-martes-jueves5-distribuidos').addEventListener
     jueves1.style.backgroundColor = '#f9f4bd';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
       // Si las celdas no están vacías, mostrar un mensaje de error
@@ -384,34 +370,7 @@ document.getElementById('rellenar-martes-jueves5-distribuidos').addEventListener
   }
   });
 
-    //agregar software 2
-document.getElementById('rellenar-martes-jueves5-software').addEventListener('click', function() {
-    // Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
-    
-    var martes1 = document.getElementById('martes-6');
-    var jueves1 = document.getElementById('jueves-6');
-    var h3 = document.querySelector("#miH3");
-    var valore = parseInt(h3.innerText);
-     valore=valore+1;
-    console.log(valore);
-    if (valore>2){
-    alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
-  } else // Verificar si las celdas están vacías antes de rellenarlas
-  if (martes1.textContent === '' && jueves1.textContent === '') {
-    // Rellenar las celdas con un texto y un color de fondo
-    martes1.textContent = 'INF512 - SB';
-    martes1.style.backgroundColor = '#98FB98';
-    jueves1.textContent = 'INF512 - SB';
-    jueves1.style.backgroundColor = '#98FB98';
-    incrementar()
-} else {
-  const valorCelda = lunes1.textContent;
-  eli=valorCelda;
-  console.log(eli); // a el
-  // Si las celdas no están vacías, mostrar un mensaje de error
-  alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-  }
-  });
+ 
 
   //agregar taller
   document.getElementById('rellenar-martes-jueves6-taller').addEventListener('click', function() {
@@ -434,7 +393,7 @@ document.getElementById('rellenar-martes-jueves5-software').addEventListener('cl
     jueves1.style.backgroundColor = '#dcaff1';
     incrementar()
 } else {
-  const valorCelda = lunes1.textContent;
+  const valorCelda = martes1.textContent;
   eli=valorCelda;
   console.log(eli); // a el
   // Si las celdas no están vacías, mostrar un mensaje de error
@@ -442,37 +401,6 @@ document.getElementById('rellenar-martes-jueves5-software').addEventListener('cl
   }
   });
 
-//agregar arquitectura
-document.getElementById('rellenar-lunes-miercoles-viernes-arquitectura').addEventListener('click', function() {
-    // Obtener referencias a las celdas correspondientes a lunes , miercoles y viernes
-    var lunes1 = document.getElementById('lunes-1');
-    var miercoles1 = document.getElementById('miercoles-1');
-    var viernes1 = document.getElementById('viernes-1');
-    var h3 = document.querySelector("#miH3");
-    var valore = parseInt(h3.innerText);
-     valore=valore+1;
-    console.log(valore);
-    if (valore>2){
-    alert("No se puede adicionar más de 2 materias dale en confirmar materias.");  
-  } else    // Verificar si las celdas están vacías antes de rellenarlas
-  if (lunes1.textContent === '' && miercoles1.textContent === ''&& viernes1.textContent === '') {
-    // Rellenar las celdas con un texto y un color de fondo
-    lunes1.textContent = 'INF552 - SA';
-    lunes1.style.backgroundColor = '#B0C4DE';
-    miercoles1.textContent = 'INF552 - SA';
-    miercoles1.style.backgroundColor = '#B0C4DE';
-    viernes1.textContent = 'INF552 - SA';
-    viernes1.style.backgroundColor = '#B0C4DE';
-    incrementar()
-} else {
-  
-  const valorCelda = lunes1.textContent;
-  eli=valorCelda;
-  console.log(eli); // a el
-  // Si las celdas no están vacías, mostrar un mensaje de error
-  alert('No se puede inscribir esta materia el horario choca con:'+' '+eli);
-  }
-  });
 
 //agregar tecnoweb
 document.getElementById('rellenar-lunes-miercoles-viernes3-tecnoweb').addEventListener('click', function() {
@@ -634,6 +562,13 @@ if (grupo === 'INF221 - SA') {
   miercoles1.style.backgroundColor = 'white';
   viernes1.textContent = '';
   viernes1.style.backgroundColor = 'white';
+}  else if (grupo === 'INF513 - SA') {
+  lunes4.textContent = '';
+  lunes4.style.backgroundColor = 'white';
+  miercoles4.textContent = '';
+  miercoles4.style.backgroundColor = 'white';
+  viernes4.textContent = '';
+  viernes4.style.backgroundColor = 'white';
 } else {
   console.log('Grupo de materia inválido');
 }
